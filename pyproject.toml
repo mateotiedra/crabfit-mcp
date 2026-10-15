@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crabfit-mcp"
+version = "0.1.0"
+description = "Purpose-built Crab Fit MCP server"
+requires-python = ">=3.11"
+dependencies = ["fastmcp>=3.0,<4", "httpx>=0.28,<1", "tzdata>=2026.1"]
+
+[project.scripts]
+crabfit-mcp = "crabfit_mcp.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
